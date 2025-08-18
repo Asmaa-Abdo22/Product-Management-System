@@ -1,0 +1,49 @@
+/* *----GOOGLE FONTS---- */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* *----Global Styles---- */
+:root {
+  --main-dark-color: #0b1d51;
+  --secondary-dark-color: #08163d;
+  --tertiary-dark-color: #1a2f73;
+  --accent-info: #86b7fe; 
+}
+
+body {
+  font-family: "Lora", serif;
+  background-color: var(--main-dark-color);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+textarea{
+  max-height: 18.75rem!important;
+}
+/* Forms */
+.form-control {
+  background-color: var(--secondary-dark-color);
+  color: #fff;
+  border: 1px solid var(--secondary-dark-color);
+}
+
+.form-control:focus {
+  color: #fff;
+  background-color: var(--secondary-dark-color);
+  border-color: var(--accent-info);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(134, 183, 254, 0.25);
+}
+
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-select ~ label::after {
+  background-color: transparent;
+}
+
+form label {
+  color: var(--accent-info) !important;
+}
+.border-mainn {
+  border-color: var(--accent-info) !important;
+}
