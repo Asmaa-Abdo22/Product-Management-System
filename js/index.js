@@ -46,20 +46,21 @@ function addProduct() {
 }
 function displayProduct(i) {
   let productHTML = `
-   <div class="p-1 item">
+   <div class="p-1 item" data-aos="fade-up" data-aos-duration="500">
                      <div class=" rounded border border-1 p-3 border-mainn">
-                        <img src="./imgs/${productList[i].image}" alt="${productList[i].name}" class="w-100">
-                        <h4 class="mt-4">${productList[i].name}</h4>
+                        <img src="./imgs/${productList[i].image}" alt="${productList[i].name}" class="w-100" data-aos="zoom-in" data-aos-duration="500">
+                        <h4 class="mt-4" data-aos="fade-right" data-aos-duration="500">${productList[i].name}</h4>
                        <div class="d-flex justify-content-between align-items-center">
-                         <h5>${productList[i].category}</h5>
-                        <h6 class="text-success fw-bold"><span class="me-1 text-white">${productList[i].price}</span> $</h6>
+                         <h5 data-aos="fade-left" data-aos-duration="500">${productList[i].category}</h5>
+                        <h6 class="text-success fw-bold" data-aos="fade-left" data-aos-duration="500"><span class="me-1 text-white">${productList[i].price}</span> $</h6>
                        </div>
-                        <p >${productList[i].description}</p>
-                        <button class="btn btn-outline-warning me-2" onclick="updateProduct(${i})">Update</button>
-                 <button class="btn btn-outline-danger" id="deleteBtn" onclick="deleteProduct(${i})">Delete</button>
+                        <p data-aos="fade-up" data-aos-duration="500">${productList[i].description}</p>
+                        <div data-aos="fade-up" data-aos-duration="500">
+                            <button class="btn btn-outline-warning me-2" onclick="updateProduct(${i})">Update</button>
+                            <button class="btn btn-outline-danger" id="deleteBtn" onclick="deleteProduct(${i})">Delete</button>
+                        </div>
                     </div>
                    </div>
-                   
 `;
 
   productsContainer.innerHTML += productHTML;
@@ -121,7 +122,6 @@ function updateProduct(i) {
   categoryInput.value = productList[i].category;
   priceInput.value = productList[i].price;
   descriptionInput.value = productList[i].description;
-  // imageInput.value = productList[i].image;
 }
 // &----EVENTS ----
 addBtn.addEventListener("click", function () {
@@ -154,6 +154,9 @@ updateBtn.addEventListener("click", function () {
     productList[updatedIndex].category = categoryInput.value;
     productList[updatedIndex].price = priceInput.value;
     productList[updatedIndex].description = descriptionInput.value;
+    if (imageInput.files[0]) {
+      productList[updatedIndex].image = imageInput.files[0].name;
+    }
     localStorage.setItem("productList", JSON.stringify(productList));
     productsContainer.innerHTML = "";
     displayAllProducts();

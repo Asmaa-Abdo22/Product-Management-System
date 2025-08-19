@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/all.min.css">
     <!-- &---------Bootstrap Css --------- -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- &---------AOS CSS --------- -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- &---------Main Css --------- -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -19,10 +21,11 @@
     <main>
         <section class="my-4">
             <div class="container  w-75 p-3">
-                <h1 class="text-center text-white">Product Management System</h1>
+                <h1 class="text-center text-white" data-aos="fade-down" data-aos-duration="800">Product Management
+                    System</h1>
 
                 <form class="my-5">
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3" data-aos="fade-right" data-aos-delay="100" data-aos-duration="600">
                         <input type="text" class="form-control" id="name" placeholder="Enter Product Name"
                             autocomplete="off">
                         <label for="name">Name</label>
@@ -31,11 +34,12 @@
                     </div>
 
 
-                    <div class="form-floating">
+                    <div class="form-floating" data-aos="fade-left" data-aos-delay="200" data-aos-duration="600">
                         <input type="text" class="form-control" id="category" placeholder="Category" autocomplete="off"
                             list="categories">
                         <label for="category">Category</label>
-                         <p class="mt-1 d-none text-danger "> * Category can only contain letters, numbers, and spaces (no special characters).
+                        <p class="mt-1 d-none text-danger "> * Category can only contain letters, numbers, and spaces
+                            (no special characters).
                             30 characters.</p>
                         <datalist id="categories">
                             <option>Mobile</option>
@@ -46,25 +50,31 @@
                         </datalist>
                     </div>
 
-                    <div class="form-floating mb-3 mt-3">
+                    <div class="form-floating mb-3 mt-3" data-aos="fade-right" data-aos-delay="300"
+                        data-aos-duration="600">
                         <input type="number" class="form-control" id="price" placeholder="Enter Price">
                         <label for="price">Price</label>
-                         <p class="mt-1 d-none text-danger "> * Price must be a number between 1 and 99999, and can have up to 2 decimal places.</p>
+                        <p class="mt-1 d-none text-danger "> * Price must be a number between 1 and 99999, and can have
+                            up to 2 decimal places.</p>
                     </div>
-                    <div class="form-floating mb-3 mt-3">
+                    <div class="form-floating mb-3 mt-3" data-aos="fade-left" data-aos-delay="400"
+                        data-aos-duration="600">
                         <textarea class="form-control" id="description"
                             placeholder="Enter Product Description"></textarea>
                         <label for="description">Description</label>
-                        <p class="mt-1 d-none text-danger "> *  Description can include letters, numbers, spaces, and basic punctuation.</p>
+                        <p class="mt-1 d-none text-danger "> * Description can include letters, numbers, spaces, and
+                            basic punctuation.</p>
                     </div>
-                    <div>
+                    <div data-aos="zoom-in" data-aos-delay="500" data-aos-duration="600">
                         <input type="file" id="imageInput" class="form-control">
                     </div>
-                    <button type="button" class="btn btn-primary mt-4" id="addBtn">Add Product</button>
-                    <button type="button" class="btn btn-warning mt-4 d-none" id="updateBtn">Update Product</button>
+                    <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
+                        <button type="button" class="btn btn-primary mt-4" id="addBtn">Add Product</button>
+                        <button type="button" class="btn btn-warning mt-4 d-none" id="updateBtn">Update Product</button>
+                    </div>
                 </form>
                 <input type="search" class="form-control w-75 m-auto mb-5" id="searchInput"
-                    placeholder="Search Products...">
+                    placeholder="Search Products..." data-aos="zoom-in" data-aos-delay="700" data-aos-duration="600">
                 <div class="row mb-4 row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="productsContainer">
 
 
@@ -74,8 +84,20 @@
     </main>
     <!-- &---------Bootstrap Js --------- -->
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- &---------AOS JS --------- -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- &---------Main Js --------- -->
     <script src="./js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: false
+            });
+        });
+    </script>
 </body>
 
 </html>
