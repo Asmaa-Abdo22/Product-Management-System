@@ -29,4 +29,6 @@ A modern, responsive Product Management System with full CRUD (Create, Read, Upd
 - Responsive Design: Flawless experience across all devices
 - Smooth Animations: Elegant AOS animations for enhanced UX
 
-
+## ⚠️ Important Note:  
+ Product images must be placed inside the `./imgs/` folder in your project.  
+ ✅ This ensures that your product images will be displayed correctly.
